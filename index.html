@@ -52,6 +52,7 @@
 
 
     <div class="button-container">
+        <button onclick="wyt()">益田云服务器</button>
         <button onclick="yt()">益田</button>
         <button onclick="ytcs()">益田测试</button>
     </div>
@@ -141,6 +142,17 @@
             // 更新 JSON 对象中的 terminalNo 字段
             jsonObject.terminalNo = text;
             jsonObject.baseServerUrl = "https://paying.yctcgroup.com:9110/";
+            jsonObject.appId = "NmfioqFs";
+
+            generateQRCode(JSON.stringify(jsonObject));
+        }
+
+        function wyt() {
+            const text = document.getElementById('text').value.trim(); // 去除空格
+
+            // 更新 JSON 对象中的 terminalNo 字段
+            jsonObject.terminalNo = text;
+            jsonObject.baseServerUrl = "https://yunpaying.usmart-pay.com/";
             jsonObject.appId = "NmfioqFs";
 
             generateQRCode(JSON.stringify(jsonObject));
